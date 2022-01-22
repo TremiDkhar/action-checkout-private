@@ -3,8 +3,8 @@ description: "Checkout Private Repository"
 author: "Tremi Dkhar"
 version: "0.1.0"
 inputs:
-  repository:
-    description: "Repository URL"
+  private-repo:
+    description: "The Private Repository URL"
     required: true
   github-token:
     description: "GitHub Token"
@@ -18,7 +18,7 @@ runs:
     - name: "Checkout the Private Repository"
       uses: 'actions/checkout@v2'
       with:
-        repository: ${{ inputs.repository }}
+        repository: ${{ inputs.private-repo }}
         token: ${{ inputs.github-token }}
         ref: ${{ inputs.reference }}
-        path: ${{ github.workspace }}/.github/actions/${{ inputs.repository }}
+        path: ${{ github.workspace }}/.github/actions/${{ inputs.private-repo }}
